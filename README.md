@@ -73,7 +73,7 @@
 ### Starting the Manager
 You can start the manager as shown in `main()`:
 ```python
-from tcp_stream_ros import CaptureManager
+from CaptureManager import CaptureManager
 manager = CaptureManager('capture_manager.json')
 manager.run()
 ```
@@ -126,6 +126,7 @@ This will launch all threads and handle all processing, output, and shutdown int
 
 ## License
 MIT
+
 
 
 
