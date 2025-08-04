@@ -1,4 +1,4 @@
-# CaptureManager: Multi-Source YOLO Object Detection Framework
+# CaptureManager: Multi-Source Object Detection
 
 ## Overview
 
@@ -125,3 +125,4 @@ This will launch all threads and handle all processing, output, and shutdown int
 
 ## License
 MIT
+
