@@ -17,7 +17,7 @@
   - Console (tabular output)
   - ROS message publishing (DetectionArray, Detection)
 - **Logging:**
-  - All print statements can be logged to `tcp_stream_ros.log` if enabled in config
+  - All print statements can be logged to `capture_manager.log` if enabled in config
 - **Configurable via JSON:**
   - Sources, processing mode, output, YOLO parameters, logging, and model path
 - **Model selection:**
@@ -30,23 +30,24 @@
    - `ultralytics`, `opencv-python`, `torch`, `numpy`, (optional: ROS Python packages)
 
 2. **Prepare your YOLO model:**
-   - Place your YOLO model file (e.g., `yolov8n.pt`) in the `models/` directory next to `tcp_stream_ros.py`.
+   - Place your YOLO model file (e.g., `yolov8n.pt`) in the `models/` directory next to `CaptureManager.py`.
    - Specify the model path in your config JSON (see below).
 
 3. **Configure your sources and options:**
-   - Edit `stream_config.json` to select input sources, processing mode, output, logging, and YOLO parameters.
+   - Edit `capture_manager.json` to select input sources, processing mode, output, logging, and object detection parameters.
 
 4. **Run the script:**
    ```bash
-   python tcp_stream_ros.py
+   python CaptureManager_example.py
    ```
    This will start all configured streams and begin detection/output as specified.
 
-## Example: `stream_config.json`
+## Example: `capture_manager.json`
 ```json
 {
   "sources": [
     { "type": "web", "device": 0, "id": "webcam" },
+    { "type": "rpi", "device": "/dev/video0", "id": "rpi_cam" },
     { "type": "tcp", "host": "127.0.0.1", "port": 1756, "id": "remote" }
   ],
   "processing": "local", // or "hat"
@@ -73,7 +74,7 @@
 You can start the manager as shown in `main()`:
 ```python
 from tcp_stream_ros import CaptureManager
-manager = CaptureManager('stream_config.json')
+manager = CaptureManager('capture_manager.json')
 manager.run()
 ```
 This will launch all threads and handle all processing, output, and shutdown internally.
@@ -104,7 +105,7 @@ This will launch all threads and handle all processing, output, and shutdown int
 
 ### Logging
 - Enable logging by setting `"logging": true` in config
-- All print statements are duplicated to `tcp_stream_ros.log`
+- All print statements are duplicated to `capture_manager.log`
 
 ### Configuring YOLO Parameters
 - All YOLO detection parameters (threshold, iou, image size, etc.) are set in the `yolo_params` section of the config
@@ -125,5 +126,6 @@ This will launch all threads and handle all processing, output, and shutdown int
 
 ## License
 MIT
+
 
 
