@@ -2,7 +2,7 @@
 
 ## Overview
 
-`CaptureManager` is a Python class for robust, configurable multi-source image/video streaming and object detection using YOLO (Ultralytics). It supports webcam, Raspberry Pi camera, and TCP streams, with flexible output options and logging. All configuration is handled via a single JSON file.
+`CaptureManager` is a Python class for robust, configurable multi-source image/video streaming and object detection using YOLO (Ultralytics) or the RPi AI Hat. It supports webcam, Raspberry Pi camera, and TCP streams, with flexible output options and logging. All configuration is handled via a single JSON file.
 
 ## Features
 - **Multi-source input:**
@@ -125,4 +125,5 @@ This will launch all threads and handle all processing, output, and shutdown int
 
 ## License
 MIT
+
 
