@@ -80,7 +80,9 @@ from CaptureManager import CaptureManager
     manager.run()
 ```
 This will launch all threads and handle all processing, output, and shutdown internally.
+in YoloNode(LifecycleNode) these lines may be inclided in __init__, with node=self
 
+    def __init__(self)
 ### Selecting Sources
 - **Webcam:**
   - `{ "type": "web", "device": 0 }` (device index)
@@ -128,6 +130,7 @@ This will launch all threads and handle all processing, output, and shutdown int
 
 ## License
 MIT
+
 
 
 
