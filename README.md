@@ -74,8 +74,10 @@
 You can start the manager as shown in `main()`:
 ```python
 from CaptureManager import CaptureManager
-manager = CaptureManager('capture_manager.json')
-manager.run()
+    node = None # Provide your ROS node here if needed
+    json_path = os.path.join(os.path.dirname(__file__), 'capture_manager.json')
+    manager = CaptureManager(json_path, node)
+    manager.run()
 ```
 This will launch all threads and handle all processing, output, and shutdown internally.
 
@@ -126,6 +128,7 @@ This will launch all threads and handle all processing, output, and shutdown int
 
 ## License
 MIT
+
 
 
 
