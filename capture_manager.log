@@ -1,0 +1,6 @@
+[INFO] Logging enabled. All print statements will be written to log file.
+[YOLO] torch.cuda.is_available(): True
+[YOLO] Initializing model on device: cuda
+[YOLO] Model loaded. Model device: cuda:0
+[YOLO] Model loaded from c:\Users\marku\source\Python\projects\ros_ws_cc-main\src\yolo_ros\yolo_ros\yolo_ros\models\yolov8n.pt
+Starting TCP stream thread for host=127.0.0.1, port=1756...
